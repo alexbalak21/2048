@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.parent {
+	background-color: darkgray;
+	width: 400px;
+	height: 400px;
+}
+
+.child {
+	width: 100px;
+	height: 100px;
+	background-color: grey;
+	border: 1px solid black;
+}

@@ -1,0 +1,24 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+table {
+	height: 500px;
+	width: 500px;
+	background-color: #cdcbcd;
+	border-spacing: 6px;
+	border-radius: 8px;
+}
+
+table tr td {
+	height: 100px;
+	width: 100px;
+	background-color: #abaaab;
+	border-radius: 8px;
+	text-align: center;
+}
