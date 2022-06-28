@@ -26,11 +26,6 @@ for (let i = 0; i < 4; i++) {
 
 // CREATING PLAY BLOCKS
 
-blocks[0][0] = 2;
-blocks[0][1] = 2;
-blocks[0][2] = 2;
-blocks[0][3] = 2;
-
 function refrechGrid() {
 	for (let i = 0; i < 4; i++) {
 		for (let j = 0; j < 4; j++) {
@@ -57,17 +52,15 @@ function input() {
 refrechGrid();
 input();
 function right() {
-	//COMBINE RIGHT
 	for (let l = 0; l < 4; l++) {
+		//COMBINE RIGHT
 		for (let c = 3; c >= 1; c--) {
 			if (blocks[l][c] != null && blocks[l][c] == blocks[l][c - 1]) {
 				blocks[l][c] *= 2;
 				blocks[l][c - 1] = null;
 			}
 		}
-	}
-	//SLIDING
-	for (let l = 0; l < 4; l++) {
+		//SLIDING RIGHT
 		for (let k = 0; k < 4; k++) {
 			for (let c = 3; c >= 1; c--) {
 				if (blocks[l][c] == null && blocks[l][c - 1] != null) {
@@ -89,10 +82,7 @@ function left() {
 				blocks[l][c + 1] = null;
 			}
 		}
-	}
-
-	//SLIDING LEFT
-	for (let l = 0; l < 4; l++) {
+		//SLIDING LEFT
 		for (let k = 0; k < 4; k++) {
 			for (let c = 0; c <= 2; c++) {
 				if (blocks[l][c] == null && blocks[l][c + 1] != null) {
@@ -114,10 +104,7 @@ function up() {
 				blocks[l + 1][c] = null;
 			}
 		}
-	}
-
-	//SLIDING UP
-	for (let c = 0; c < 4; c++) {
+		//SLIDING UP
 		for (let k = 0; k < 4; k++) {
 			for (let l = 0; l <= 2; l++) {
 				if (blocks[l][c] == null && blocks[l + 1][c] != null) {
@@ -139,9 +126,7 @@ function down() {
 				blocks[l - 1][c] = null;
 			}
 		}
-	}
-	//SLINDING DOWN
-	for (let c = 0; c < 4; c++) {
+		//SLINDING DOWN
 		for (let k = 0; k < 4; k++) {
 			for (let l = 3; l >= 1; l--) {
 				if (blocks[l][c] == null && blocks[l - 1][c] != null) {
@@ -151,6 +136,5 @@ function down() {
 			}
 		}
 	}
-
 	refrechGrid();
 }
