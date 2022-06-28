@@ -24,8 +24,9 @@ for (let i = 0; i < 4; i++) {
 	}
 }
 
-blocks[0][0] = 2;
-blocks[0][1] = 2;
+// CREATING PLAY BLOCKS
+blocks[1][0] = 2;
+blocks[1][1] = 2;
 
 function refrechGrid() {
 	for (let i = 0; i < 4; i++) {
@@ -60,6 +61,7 @@ function right() {
 				count++;
 			} else break;
 		}
+
 		for (let k = 1; k <= count; k++) {
 			blocks[i].pop();
 			blocks[i].unshift(null);
@@ -79,6 +81,42 @@ function left() {
 		for (let k = 1; k <= count; k++) {
 			blocks[i].shift();
 			blocks[i].push(null);
+		}
+	}
+	refrechGrid();
+}
+
+function up() {
+	for (let i = 0; i < 4; i++) {
+		let count = 0;
+		for (let j = 0; j <= 3; j++) {
+			if (blocks[j][i] == null) {
+				count++;
+			} else break;
+		}
+		for (let l = 1; l <= count; l++) {
+			for (let k = 0; k < 3; k++) {
+				blocks[k][i] = blocks[k + 1][i];
+			}
+			blocks[3][i] = null;
+		}
+	}
+	refrechGrid();
+}
+
+function down() {
+	for (let i = 0; i < 4; i++) {
+		let count = 0;
+		for (let j = 3; j >= 0; j--) {
+			if (blocks[j][i] == null) {
+				count++;
+			} else break;
+		}
+		for (let l = 1; l <= count; l++) {
+			for (let k = 2; k >= 0; k--) {
+				blocks[k + 1][i] = blocks[k][i];
+			}
+			blocks[0][i] = null;
 		}
 	}
 	refrechGrid();
